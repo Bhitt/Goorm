@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+
+<h1>
+	TEST
+</h1>
+
+<div>
+	<% ids.forEach(function(element){ %>
+				<img src="https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=<%= element %>&type=card">
+				<p>
+					<%= element %>
+				</p>
+	<% }); %>
+</div>
+
+
+<% include ./partials/header %>

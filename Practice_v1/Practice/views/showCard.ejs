@@ -1,0 +1,13 @@
+<% include ./partials/header %>
+
+<a href="/">Index</a>
+
+<hr>
+
+<% cards.forEach(function(card){ %>
+	<img src="<%= card.imageUrl %>">
+<% }); %>
+
+
+
+<% include ./partials/footer %>
