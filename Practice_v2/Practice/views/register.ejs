@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+
+<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
+		<!-- This is google sign in button 	 -->
+</div>
+
+<a href="/" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+
+
+	function onSignIn(googleUser) {
+  //Data for client side
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  //data to send to backend
+  var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+}
+</script>
+
+<% include ./partials/footer %>

@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+
+<a href="/">Index</a>
+
+<h1>
+	Dog Collection!
+</h1>
+
+<% dogs.forEach(function(dog){ %>
+	<div class="card" style="width: 18rem;">
+	  <img src="<%= dog.image %>" class="card-img-top" alt="...">
+	  <div class="card-body">
+		<h5 class="card-title">Name: <%= dog.name %></h5>
+		<p class="card-text">Breed: <%= dog.breed %></p>
+	  </div>
+	</div>
+<% }); %>
+
+
+<a href="/">Back to Index</a>
+
+<% include ./partials/footer %>
